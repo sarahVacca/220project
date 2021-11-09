@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'phonenumber_field'
     'clarkclothes.apps.ClarkClothesConfig'
     'university.apps.UniversityConfig',
     'minifacebook.apps.MinifacebookConfig',
