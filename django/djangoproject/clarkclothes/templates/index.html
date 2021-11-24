@@ -4,15 +4,16 @@
 
 {% block container %}
 
-<h1>Clothes</h1>
+<h1>Clark Clothes</h1>
 
 <table>
-<tr><th>Name</th><th>Type</th><th>Price</th></tr>
-{% for id in clothing_item %}
+<tr><th>Name</th><th>Image</th><th>Type</th><th>Price</th></tr>
+{% for ci in clothing_items %}
   <tr>
-    <td>{{clothing_item.name}}</td>
-    <td>{{clothing_item.type}}</td>
-    <td>{{clothing_item.price}}</td>
+    <td>{{ci.name}}</td>
+    <td>{{ci.image}}</td>
+    <td>{{ci.type}}</td>
+    <td>{{ci.price}}</td>
   </tr>
 {% endfor %}
 </table>

@@ -3,7 +3,7 @@ from django.contrib import admin
 # from django.db.models.expressions import SimpleCol
 # from django.db.models.fields import TextField
 
-from .models import Brand, Clothing_Item, Size, Style, Type, User
+from .models import Brand, Clothing_Item, Size, Style, Type, User, Availablity
 
 # Register your models here.
 # from .models import Student, Room, Course, Enrolled
@@ -16,4 +16,5 @@ admin.site.register(Style)
 admin.site.register(Size)
 admin.site.register(User)
 admin.site.register(Brand)
+admin.site.register(Availablity)
 
