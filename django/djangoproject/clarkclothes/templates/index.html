@@ -1,21 +1,56 @@
+
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Clothes{% endblock %}
 
 {% block container %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<h1>Clark Clothes</h1>
+<style>
+  body{
+    background-color: white;
+  }
+  h1{
+    font-family: "Sofia", sans-serif;
+    color: pink;
+  }
+</style>
 
-<table>
+<h1><center>Clark Clothes</center></h1>
+
+{% comment %}
+//////////////////////////////////////////////////////////////
+<center> 
+<table> 
 <tr><th>Name</th><th>Image</th><th>Type</th><th>Price</th></tr>
 {% for ci in clothing_items %}
   <tr>
     <td>{{ci.name}}</td>
-    <td>{{ci.image}}</td>
+    <td>
+      <img src="{{ ci.image.url }}" alt="img">
+    </td>
     <td>{{ci.type}}</td>
     <td>{{ci.price}}</td>
   </tr>
 {% endfor %}
 </table>
+</center>
+//////////////////////////////////////////////////////////////
+{% endcomment %}
+
+
+  {% for ci in clothing_items %}
+  <div class="card w-75 mx-auto">
+    <div class="card-body">
+      <p> <img src="{{ ci.image }}"></p>
+      <p class="card-text">{{ci.name}}</p>
+      <p class="card-text">${{ci.price}}</p>
+
+    </div>
+  </div>
+  {% endfor %}
+
 
 {% endblock %}
