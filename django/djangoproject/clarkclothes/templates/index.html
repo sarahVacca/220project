@@ -12,10 +12,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static '/styles.css' %}">
 
-
 <style>
   body{
-    background-color: white;
+    background-color: F3F3F3;
   }
   h1{
     font-family: "Sofia", sans-serif;
@@ -24,30 +23,8 @@
 </style>
 
 {% include 'navbar.html' %}
-
-{% comment %}
-//////////////////////////////////////////////////////////////
-<center> 
-<table> 
-<tr><th>Name</th><th>Image</th><th>Type</th><th>Price</th></tr>
-{% for ci in clothing_items %}
-  <tr>
-    <td>{{ci.name}}</td>
-    <td>
-      <img src="{% url 'ci.image' %}" alt="img">
-    </td>
-    <td>{{ci.type}}</td>
-    <td>{{ci.price}}</td>
-  </tr>
-{% endfor %}
-</table>
-</center>
-//////////////////////////////////////////////////////////////
-{% endcomment %}
-
-
   {% for ci in clothing_items %}
-  <div class="card w-75 mx-auto" style="margin-bottom: 20px">
+  <div class="card w-75 mx-auto" style="margin-bottom: 20px; background-color: white;">
     <div class="card-body">
       <div style="font-family: 'Playfair Display', serif;">
         <p> <img src="{{ ci.image }}"></p>
