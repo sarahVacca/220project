@@ -34,6 +34,10 @@
     </div>
   </div>
   {% endfor %}
-
+  {% block content %}
+  {% if user.is_authenticated %}
+  <a href="{% url 'form' %}" class="btn btn-secondary" role="button" style="float: right; margin-right: 187px; margin-bottom: 10px;">Add Item</a>
+  {% endif %}
+  {% endblock %}
 
 {% endblock %}

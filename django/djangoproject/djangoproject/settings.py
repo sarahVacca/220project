@@ -150,3 +150,4 @@ STATIC_ROOT = os.path.join(os.path.abspath(os.sep), "gen")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/clarkclothes'
+LOGOUT_REDIRECT_URL = '/clarkclothes'

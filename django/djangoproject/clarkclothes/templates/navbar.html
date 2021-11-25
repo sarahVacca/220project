@@ -12,7 +12,9 @@
   <div class="d-inline-block align-top">
       {% block content %}
       {% if user.is_authenticated %}
-      <div style="color: pink;"> Hi {{ user.username }}! </div>
+      <div style="color: pink;"> Hi {{ user.username }} -
+      <a href="{% url 'logout' %}" style="color: pink;">Log Out</a>
+      </div>
       {% else %}
       <a href= "{% url 'login' %}" style="color: pink;">Log In </a>
       {% endif %}
