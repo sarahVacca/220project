@@ -1,3 +1,4 @@
+{% load static %}
 <style>
   h3 {
     font-family: "Sofia", sans-serif;
@@ -7,7 +8,7 @@
 
 <!-- Image and text -->
 <nav class="navbar navbar-light" style="margin-bottom: 10px; background-color: #8f485b;">
-  <img src="Clark Clothes.png" width="30" height="30" class="align-top" alt="">
+  <img src="{% static '/logo.png' %}" width="30" height="30" class="align-top" alt="">
   <h3 class="align-top">Clark Clothes</h3>
   <div class="align-top">
       {% block content %}
