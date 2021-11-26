@@ -19,9 +19,10 @@ from django.urls import include, path
 
 
 urlpatterns = [
-    path('', lambda req: redirect('/')),
+    path('', lambda req: redirect('clarkclothes/')),
     path('clarkclothes/', include('clarkclothes.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('additem/', include('clarkclothes.urls')),
+    path('additem/', include('clarkclothes.urls'))
+
 ]
