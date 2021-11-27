@@ -35,7 +35,7 @@ def detail_view(request, id):
          
     return render(request, "detail_view.html", context)
 
-def update_view(request, id):
+def update_view(request, id=None):
     # dictionary for initial data with
     # field names as keys
     context ={}
@@ -50,7 +50,7 @@ def update_view(request, id):
     # redirect to detail_view
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("/" + id)
+        return HttpResponseRedirect("/")
  
     # add form dictionary to context
     context["form"] = form
