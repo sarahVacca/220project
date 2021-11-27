@@ -16,7 +16,7 @@
     left: 40%;
   }
   body{
-    background-color: F3F3F3;
+    background-color: #F3F3F3;
   }
 </style>
 
@@ -28,6 +28,9 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-secondary" style="background-color: #FFC0CB; color: black">Log in</button>
+        <br>
+        <br>
+        <a href="{% url 'signup' %}" style="color: #212529">Register New Account</a>
       </form>
     </div>
   </div>
