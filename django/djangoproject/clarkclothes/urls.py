@@ -13,5 +13,10 @@ urlpatterns = [
     path('styledetails/', views.styledetails, name="styles"),
     path('branddetails/', views.branddetails, name="brands"),
     path('formType/', views.formType, name="type"),
+    path('formSize/', views.formSize, name="addSize"),
+    path('formStyle/', views.formStyle, name="newStyle"),
+    path('formBrand/', views.formBrand, name="createBrand"),
+
+
 
 ]

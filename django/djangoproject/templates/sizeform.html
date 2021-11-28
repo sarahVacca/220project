@@ -22,7 +22,7 @@
   <center>
     <div class="card centered" style="width: 18rem;">
       <div class="card-body" style="text-align: left;">
-        <h2 style="text-align: center;">Add Clothing Type</h2>
+        <h2 style="text-align: center;">Add Clothing Size</h2>
         <form method="POST" enctype="multipart/form-data">
  
             <!-- Security token -->
@@ -31,7 +31,7 @@
             <!-- Using the formset -->
             {{ form.as_p }}
             <button type="submit" class="btn btn-secondary" style="float: right; background-color: #FFC0CB; color: black">Submit</button>
-            <a class="btn btn-secondary" href="{% url 'details' %}" role="button">Back</a>
+            <a class="btn btn-secondary" href="{% url 'sizes' %}" role="button">Back</a>
         </form>
       </div>
     </div>
