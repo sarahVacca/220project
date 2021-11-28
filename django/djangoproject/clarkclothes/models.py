@@ -46,7 +46,7 @@ class Availablity(models.Model):
 class Clothing_Item(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
-    image = models.ImageField(default='null')
+    image = models.ImageField(default='null', upload_to='images/')
     type = models.ForeignKey(Type, null=False, on_delete=models.CASCADE, db_index=True)
     price = models.DecimalField(decimal_places=2, max_digits=9)
     size = models.ForeignKey(Size, null=False, on_delete=models.CASCADE, db_index=True)
