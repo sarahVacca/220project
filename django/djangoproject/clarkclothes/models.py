@@ -35,7 +35,7 @@ class User(models.Model):
     phone_number = models.CharField(max_length=11)
 
     def __str__(self):
-        return '{}'.format(self.name)
+        return '{}'.format(self.clark_email)
 
 class Availablity(models.Model):
     name = models.CharField(primary_key=True, max_length=100)
