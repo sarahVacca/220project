@@ -4,13 +4,29 @@ from django.shortcuts import render
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
 
 # Create your views here.
-from .models import Clothing_Item
+from .models import Clothing_Item, Type, Size, Style, Brand
 from PIL import Image
-from .forms import itemForm
+from .forms import itemForm, typeForm, sizeForm, styleForm, brandForm
 
 def index(request):
     context = {"clothing_items": Clothing_Item.objects.order_by('name')}
     return render(request, "index.html", context)
+
+def typedetails(request):
+    context = {"types": Type.objects.order_by('type')}
+    return render(request, "typedetails.html", context)
+
+def sizedetails(request):
+    context = {"sizes": Size.objects.order_by('size')}
+    return render(request, "sizedetails.html", context)
+
+def styledetails(request):
+    context = {"styles": Style.objects.order_by('style_name')}
+    return render(request, "styledetails.html", context)
+
+def branddetails(request):
+    context = {"brands": Brand.objects.order_by('brand_name')}
+    return render(request, "branddetails.html", context)
 
 def list(request):
     images = {"clothing_items": Clothing_Item.objects.values_list('image')}
@@ -24,6 +40,42 @@ def form(request):
         return HttpResponseRedirect('/clarkclothes')
     context['form'] = form
     return render(request, "forms.html", context)
+
+def formType(request):
+    context={}
+    form2 = typeForm(request.POST or None)
+    if form2.is_valid():
+        form2.save()
+        return HttpResponseRedirect('/clarkclothes')
+    context['form'] = form2
+    return render(request, "typeform.html", context)
+
+def formSize(request):
+    context={}
+    form = sizeForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/clarkclothes')
+    context['form'] = form
+    return render(request, "sizeform.html", context)
+
+def formStyle(request):
+    context={}
+    form = styleForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/clarkclothes')
+    context['form'] = form
+    return render(request, "styleform.html", context)
+
+def formBrand(request):
+    context={}
+    form = brandForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/clarkclothes')
+    context['form'] = form
+    return render(request, "brandform.html", context)
 
 def detail_view(request, id):
     # dictionary for initial data with

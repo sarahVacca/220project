@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static '/styles.css' %}">
+
+<style>
+  body{
+    background-color: F3F3F3;
+  }
+  h1{
+    font-family: "Sofia", sans-serif;
+    color: pink;
+  }
+</style>
+
+{% include 'navbar.html' %}
+{% for s in sizes %}
+<div class="card w-75 mx-auto" style="margin-bottom: 20px; background-color: white;">
+    <div class="card-body">
+      <div style="font-family: 'Playfair Display', serif;">
+        <p class="card-text"><b>{{s.size}}</b></p>
+      </div>
+    </div>
+  </div> 
+{% endfor %}
