@@ -1,7 +1,6 @@
 from django.urls import path
 
 from . import views
-from .views import detail_view, formType
 
 urlpatterns = [
     path('', views.index, name="index"),
@@ -16,7 +15,6 @@ urlpatterns = [
     path('formSize/', views.formSize, name="addSize"),
     path('formStyle/', views.formStyle, name="newStyle"),
     path('formBrand/', views.formBrand, name="createBrand"),
-
-
+    path('<id>/', views.update_type, name="t_update"),
 
 ]

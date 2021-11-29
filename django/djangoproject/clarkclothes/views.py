@@ -109,6 +109,166 @@ def update_view(request, id=None):
  
     return render(request, "update_view.html", context)
 
+def update_type(request, id=None):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Type, id = id)
+ 
+    # pass the object as instance in form
+    form = typeForm(request.POST or None, instance = obj)
+ 
+    # save the data from the form and
+    # redirect to detail_view
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/")
+ 
+    # add form dictionary to context
+    context["form"] = form
+ 
+    return render(request, "update_type.html", context)
+
+def update_size(request, id=None):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Size, id = id)
+ 
+    # pass the object as instance in form
+    form = sizeForm(request.POST or None, instance = obj)
+ 
+    # save the data from the form and
+    # redirect to detail_view
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/")
+ 
+    # add form dictionary to context
+    context["form"] = form
+ 
+    return render(request, "update_size.html", context)
+
+def update_style(request, id=None):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Style, id = id)
+ 
+    # pass the object as instance in form
+    form = styleForm(request.POST or None, instance = obj)
+ 
+    # save the data from the form and
+    # redirect to detail_view
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/")
+ 
+    # add form dictionary to context
+    context["form"] = form
+ 
+    return render(request, "update_style.html", context)
+
+def update_brand(request, id=None):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Brand, id = id)
+ 
+    # pass the object as instance in form
+    form = brandForm(request.POST or None, instance = obj)
+ 
+    # save the data from the form and
+    # redirect to detail_view
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/")
+ 
+    # add form dictionary to context
+    context["form"] = form
+ 
+    return render(request, "update_brand.html", context)
+
+def delete_type(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Type, id = id)
+ 
+ 
+    if request.method =="POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect("/clarkclothes")
+ 
+    return render(request, "delete_type.html", context)
+
+def delete_size(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Size, id = id)
+ 
+ 
+    if request.method =="POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect("/clarkclothes")
+ 
+    return render(request, "delete_size.html", context)
+
+def delete_style(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Style, id = id)
+ 
+ 
+    if request.method =="POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect("/clarkclothes")
+ 
+    return render(request, "delete_style.html", context)
+
+def delete_brand(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Brand, id = id)
+ 
+ 
+    if request.method =="POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect("/clarkclothes")
+ 
+    return render(request, "delete_brand.html", context)
+
 def delete_view(request, id):
     # dictionary for initial data with
     # field names as keys
