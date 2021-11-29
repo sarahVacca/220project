@@ -15,6 +15,13 @@ urlpatterns = [
     path('formSize/', views.formSize, name="addSize"),
     path('formStyle/', views.formStyle, name="newStyle"),
     path('formBrand/', views.formBrand, name="createBrand"),
-    path('<id>/', views.update_type, name="t_update"),
+    path('bob/<type>/', views.update_type, name="t_update"),
+    path('bob/<type>/delete/', views.delete_type, name="bob_delete"),
+    path('tim/<size>/', views.update_size, name="s_update"),
+    path('tim/<size>/delete/', views.delete_size, name="tim_delete"),
+    path('rob/<style>/', views.update_style, name="y_update"),
+    path('rob/<style>/delete/', views.delete_style, name="rob_delete"),
+    path('joe/<brand>/', views.update_brand, name="b_update"),
+    path('joe/<brand>/delete/', views.delete_brand, name="joe_delete"),
 
 ]

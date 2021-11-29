@@ -1,34 +1,28 @@
 import uuid
 from django.db import models
-# from phonenumber_field.modelfields import PhoneNumberField
-# from djmoney.models.fields import MoneyField
 from PIL import Image
 
 class Type(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    type = models.CharField(max_length=100)
+    type = models.CharField(primary_key=True, max_length=100)
 
     def __str__(self):
         return '{}'.format(self.type)
 
 class Size(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    size = models.CharField(max_length=100)
+    size = models.CharField(primary_key=True, max_length=100)
 
     def __str__(self):
         return '{}'.format(self.size)
 
 class Style(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    style_name = models.CharField(max_length=100)
+    style_name = models.CharField(primary_key=True, max_length=100)
     description = models.TextField()
 
     def __str__(self):
         return '{}'.format(self.style_name)
 
 class Brand(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    brand_name = models.CharField(primary_key=False, max_length=100)
+    brand_name = models.CharField(primary_key=True, max_length=100)
 
     def __str__(self):
         return '{}'.format(self.brand_name)

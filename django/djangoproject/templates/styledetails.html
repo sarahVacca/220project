@@ -24,6 +24,8 @@
       <div style="font-family: 'Playfair Display', serif;">
         <p class="card-text"><b>{{s.style_name}}</b></p>
         <p class="card-text">{{s.description}}</p>
+        <a href="{% url 'y_update' s.style_name %}" class="btn btn-secondary" role="button" style="float: right; margin-right: 187px; margin-bottom: 10px;">Edit</a>
+        <a href="{% url 'rob_delete' s.style_name %}" class="btn btn-secondary" role="button" style="float: right; margin-right: 187px; margin-bottom: 10px;">Delete</a>
       </div>
     </div>
   </div> 

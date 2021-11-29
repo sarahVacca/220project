@@ -109,13 +109,13 @@ def update_view(request, id=None):
  
     return render(request, "update_view.html", context)
 
-def update_type(request, id=None):
+def update_type(request, type=None):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Type, id = id)
+    obj = get_object_or_404(Type, type = type)
  
     # pass the object as instance in form
     form = typeForm(request.POST or None, instance = obj)
@@ -131,13 +131,13 @@ def update_type(request, id=None):
  
     return render(request, "update_type.html", context)
 
-def update_size(request, id=None):
+def update_size(request, size=None):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Size, id = id)
+    obj = get_object_or_404(Size, size = size)
  
     # pass the object as instance in form
     form = sizeForm(request.POST or None, instance = obj)
@@ -153,13 +153,13 @@ def update_size(request, id=None):
  
     return render(request, "update_size.html", context)
 
-def update_style(request, id=None):
+def update_style(request, style_name = None):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Style, id = id)
+    obj = get_object_or_404(Style, style_name = style_name)
  
     # pass the object as instance in form
     form = styleForm(request.POST or None, instance = obj)
@@ -175,13 +175,13 @@ def update_style(request, id=None):
  
     return render(request, "update_style.html", context)
 
-def update_brand(request, id=None):
+def update_brand(request, brand_name=None):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Brand, id = id)
+    obj = get_object_or_404(Brand, brand_name = brand_name)
  
     # pass the object as instance in form
     form = brandForm(request.POST or None, instance = obj)
@@ -197,13 +197,13 @@ def update_brand(request, id=None):
  
     return render(request, "update_brand.html", context)
 
-def delete_type(request, id):
+def delete_type(request, type):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Type, id = id)
+    obj = get_object_or_404(Type, type = type)
  
  
     if request.method =="POST":
@@ -215,13 +215,13 @@ def delete_type(request, id):
  
     return render(request, "delete_type.html", context)
 
-def delete_size(request, id):
+def delete_size(request, size):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Size, id = id)
+    obj = get_object_or_404(Size, size = size)
  
  
     if request.method =="POST":
@@ -233,13 +233,13 @@ def delete_size(request, id):
  
     return render(request, "delete_size.html", context)
 
-def delete_style(request, id):
+def delete_style(request, style_name):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Style, id = id)
+    obj = get_object_or_404(Style, style_name = style_name)
  
  
     if request.method =="POST":
@@ -251,13 +251,13 @@ def delete_style(request, id):
  
     return render(request, "delete_style.html", context)
 
-def delete_brand(request, id):
+def delete_brand(request, brand_name):
     # dictionary for initial data with
     # field names as keys
     context ={}
  
     # fetch the object related to passed id
-    obj = get_object_or_404(Brand, id = id)
+    obj = get_object_or_404(Brand, brand_name = brand_name)
  
  
     if request.method =="POST":
