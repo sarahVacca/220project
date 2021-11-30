@@ -3,7 +3,7 @@ from django.db import models
 from PIL import Image
 
 class Type(models.Model):
-    type = models.CharField(primary_key=True, max_length=100, editable=True)
+    type = models.CharField(primary_key=True, max_length=100)
 
     def __str__(self):
         return '{}'.format(self.type)
