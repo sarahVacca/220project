@@ -3,26 +3,30 @@ from django.db import models
 from PIL import Image
 
 class Type(models.Model):
-    type = models.CharField(primary_key=True, max_length=100)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    type = models.CharField(max_length=100)
 
     def __str__(self):
         return '{}'.format(self.type)
 
 class Size(models.Model):
-    size = models.CharField(primary_key=True, max_length=100)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    size = models.CharField(max_length=100)
 
     def __str__(self):
         return '{}'.format(self.size)
 
 class Style(models.Model):
-    style_name = models.CharField(primary_key=True, max_length=100)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    style_name = models.CharField(max_length=100)
     description = models.TextField()
 
     def __str__(self):
         return '{}'.format(self.style_name)
 
 class Brand(models.Model):
-    brand_name = models.CharField(primary_key=True, max_length=100)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    brand_name = models.CharField(max_length=100)
 
     def __str__(self):
         return '{}'.format(self.brand_name)
