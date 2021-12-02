@@ -4,11 +4,20 @@
     font-family: "Sofia", sans-serif;
     color: pink;
   }
+  .navbar{
+    max-height: 60px;
+  }
+  .navbar-header img{
+    max-height: 100%;
+    width: auto;
+  }
 </style>
 
 <!-- Image and text -->
 <nav class="navbar navbar-light" style="margin-bottom: 10px; background-color: #8f485b;">
-  <img src="{% static '/logo.png' %}" width="30" height="30" class="align-top" alt="">
+  <div class="navbar-header" style="vertical-align: top;">
+    <img src="{% static '/logo.png' %}" width="40" height="40" class="d-inline-block align-top navbar-header" style="vertical-align: top">
+  </div>
   <h3 class="align-top"><a href="/clarkclothes" style="font-family: 'Sofia', sans-serif; color: pink;">Clark Clothes </a></h3>
   <div class="align-top">
       {% block content %}

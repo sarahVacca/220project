@@ -27,9 +27,8 @@
   <div class="card w-75 mx-auto" style="margin-bottom: 20px; background-color: white;">
     <div class="card-body">
       <div style="font-family: 'Playfair Display', serif;">
-        <p> <img src="{{ ci.image }}"></p>
         <p class="card-text"><b>{{ci.name}}</b></p>
-        <p class="card-text"><b>Size: </b>{{ci.size}}   <b> Price: </b>${{ci.price}}   <b> Brand: </b>{{ci.brand}}   </p>
+        <p class="card-text"><b>Size: </b>{{ci.size}}   <b> Price: </b>${{ci.price}}   <b> Brand: </b>{{ci.brand}}   <b> Seller: </b>{{ci.user_email}}</p>
         {% block update %}
           {% if ci.user_email|stringformat:"s" == user.email %}
             <a href="{% url 'update_view' ci.id %}" class="btn btn-secondary" role="button" style="float: right; margin-right: 187px; margin-bottom: 10px;">Edit</a>
@@ -47,7 +46,6 @@
   <a href="{% url 'sizes' %}" class="btn btn-secondary" role="button" style="float: right; margin-right: 187px; margin-bottom: 10px;">Sizes</a>
   <a href="{% url 'styles' %}" class="btn btn-secondary" role="button" style="float: right; margin-right: 187px; margin-bottom: 10px;">Styles</a>
   <a href="{% url 'brands' %}" class="btn btn-secondary" role="button" style="float: right; margin-right: 187px; margin-bottom: 10px;">Brands</a>
-
   {% endif %}
   {% endblock %}
 
