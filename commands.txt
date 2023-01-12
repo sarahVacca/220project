@@ -1,0 +1,18 @@
+# STEP 1
+# Build docker image from Dockerfile
+docker build --tag django_todo:latest .
+docker build --tag djangoproject:v1 .
+
+# Show all your images
+docker images
+docker image list
+docker image ls
+
+# Shows running containers
+docker ps
+
+#
+docker run --name djangoproject -d -p 8000:80 djangoproject:v1
+
+# 
+docker-compose up 
