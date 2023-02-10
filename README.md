@@ -1,23 +1,6 @@
 # 220project
 Project for CSCI 220: Database Management and Systems Design
 /////////////////////////////////////////////
-Starting up:
-1. Install docker
-2. Install postgres
-3. Install python (use the windows store)
-4. Install django (type "pip install django" in terminal)
-5. Open terminal and type "psql -U postgres", enter your postgres password (this gets you into psql terminal)
-6. Type "CREATE DATABASE " + database name +";"
-7. Get out of postgres and back into normal terminal and type "psql -U postgres clarkclothes < db_dump.DATE.sql" and enter your password
-8. Go back into psql using postgres user and type "\c " + database name
-
-
-Warning - got this while installing django
-WARNING: The script sqlformat.exe is installed in 'C:\Users\Sarah\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\Scripts' which is not on PATH.
-  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-  WARNING: The script django-admin.exe is installed in 'C:\Users\Sarah\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\Scripts' which is not on PATH.
-  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-  /////////////////
   # Django Examples
 
 A starter project for Clark's Databases course (CSCI 220). This project includes a web server and database.

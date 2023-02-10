@@ -28,6 +28,7 @@
     <div class="card-body">
       <div style="font-family: 'Playfair Display', serif;">
         <p class="card-text"><b>{{ci.name}}</b></p>
+        <img src="{{ci.image.url}}" alt="image" height="100px" width="100px">
         <p class="card-text"><b>Size: </b>{{ci.size}}   <b> Price: </b>${{ci.price}}   <b> Brand: </b>{{ci.brand}}   <b> Seller: </b>{{ci.user_email}}</p>
         {% block update %}
           {% if ci.user_email|stringformat:"s" == user.email %}

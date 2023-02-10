@@ -34,7 +34,7 @@ def list(request):
 
 def form(request):
     context={}
-    form = itemForm(request.POST or None)
+    form = itemForm(request.POST, request.FILES)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/clarkclothes')
@@ -90,13 +90,11 @@ def detail_view(request, id):
 def update_view(request, id=None):
     # dictionary for initial data with
     # field names as keys
-    context ={}
- 
+    context = {}
     # fetch the object related to passed id
     obj = get_object_or_404(Clothing_Item, id = id)
- 
     # pass the object as instance in form
-    form = itemForm(request.POST or None, instance = obj)
+    form = itemForm(request.POST or None, request.FILES, instance = obj)
  
     # save the data from the form and
     # redirect to detail_view
