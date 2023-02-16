@@ -27,9 +27,8 @@
       <form method="post" style="text-align: left;">
         {% csrf_token %}
         {{ form.as_p }}
-        <center>
-        <button type="submit" class="btn btn-secondary" style="background-color: #FFC0CB; color: black;">Sign Up</button>
-        </center>
+        <button type="submit" class="btn btn-secondary" style="background-color: #FFC0CB; color: black; float: right;">Sign Up</button>
+        <a class="btn btn-secondary" href="/accounts/login" role="button" style="float: left;">Back</a>
       </form>
     </div>
   </div>
