@@ -46,7 +46,7 @@ def formType(request):
     form2 = typeForm(request.POST or None)
     if form2.is_valid():
         form2.save()
-        return HttpResponseRedirect('/clarkclothes')
+        return HttpResponseRedirect('/clarkclothes/typedetails/')
     context['form'] = form2
     return render(request, "typeform.html", context)
 
@@ -55,7 +55,7 @@ def formSize(request):
     form = sizeForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect('/clarkclothes')
+        return HttpResponseRedirect('/clarkclothes/sizedetails/')
     context['form'] = form
     return render(request, "sizeform.html", context)
 
@@ -64,7 +64,7 @@ def formStyle(request):
     form = styleForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect('/clarkclothes')
+        return HttpResponseRedirect('/clarkclothes/styledetails/')
     context['form'] = form
     return render(request, "styleform.html", context)
 
@@ -73,7 +73,7 @@ def formBrand(request):
     form = brandForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect('/clarkclothes')
+        return HttpResponseRedirect('/clarkclothes/branddetails/')
     context['form'] = form
     return render(request, "brandform.html", context)
 

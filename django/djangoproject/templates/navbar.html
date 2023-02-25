@@ -1,4 +1,5 @@
 {% load static %}
+
 <style>
   h3 {
     font-family: "Sofia", sans-serif;
@@ -6,28 +7,73 @@
   }
   .navbar{
     max-height: 60px;
+    width: 100%;
   }
   .navbar-header img{
     max-height: 100%;
     width: auto;
   }
+  .links{
+    color: white;
+    font-family: "Sofia", sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .links:hover{
+    color: #8f485b;
+    text-decoration: none;
+  }
+  .darkfontlink{
+    color: pink;
+  }
+  .darkfontlink:hover{
+    color: white;
+    text-decoration: none;
+  }
+  .title:hover{
+    font-size: 30px;
+  }
+  .titlebox{
+    text-align: center;
+    margin-left: 43%;
+    position: absolute;
+  }
+
+
+
 </style>
 
 <!-- Image and text -->
-<nav class="navbar navbar-light" style="margin-bottom: 10px; background-color: #8f485b;">
-  <div class="navbar-header" style="vertical-align: top;">
-    <img src="{% static '/logo.png' %}" width="40" height="40" class="d-inline-block align-top navbar-header" style="vertical-align: top">
+<nav class="navbar navbar-light" style="background-color: #8f485b;">
+  <div>
+    <img src="{% static '/logo.png' %}" width="40" height="40">
   </div>
-  <h3 class="align-top"><a href="/clarkclothes" style="font-family: 'Sofia', sans-serif; color: pink;">Clark Clothes </a></h3>
-  <div class="align-top">
-      {% block content %}
+  <div class="titlebox">
+    <h3><a class="darkfontlink title" href="/clarkclothes" style="font-family: 'Sofia', sans-serif;">Clark Clothes </a></h3>
+  </div>
+  <span class="login">
+      {% block content2 %}
       {% if user.is_authenticated %}
       <div style="color: pink;"> Hi {{ user.username }} -
-      <a href="{% url 'logout' %}" style="color: pink;">Log Out</a>
+      <a class="darkfontlink" href="{% url 'logout' %}">Log Out</a>
       </div>
       {% else %}
-      <a href= "{% url 'login' %}" style="color: pink;">Log In </a>
+      <a class="darkfontlink" href= "{% url 'login' %}">Log In </a>
       {% endif %}
       {% endblock %}
-  </div>
+    </span>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </nav>
+{% block content %}
+{% if user.is_authenticated %}
+<nav class="d-flex navbar navbar-light justify-content-center" style="height: 40px; margin-bottom: 10px; background-color: grey;">
+  <a class="links" href="{% url 'form' %}" role="button">Add Item</a><br>
+  <a class="links" href="{% url 'details' %}" role="button">Clothing Types</a><br>
+  <a class="links" href="{% url 'sizes' %}" role="button">Sizes</a><br>
+  <a class="links" href="{% url 'styles' %}" role="button">Styles</a><br>
+  <a class="links" href="{% url 'brands' %}" role="button">Brands</a>
+</nav>
+{% endif %}
+{% endblock %}
