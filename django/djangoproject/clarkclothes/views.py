@@ -93,9 +93,15 @@ def update_view(request, id=None):
     context = {}
     # fetch the object related to passed id
     obj = get_object_or_404(Clothing_Item, id = id)
-    # pass the object as instance in form
-    form = itemForm(request.POST or None, request.FILES, instance = obj)
- 
+    if request.method == 'POST':
+        # pass the object as instance in form
+        form = itemForm(request.POST or None, request.FILES or None, instance = obj)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/")
+    else:
+        context = {"name": obj.name, "type": obj.type, "price": obj.price, "user_email": obj.user_email, "brand": obj.brand, "style": obj.style, "status": obj.status, "size": obj.size, "image": obj.image}
+        form = itemForm(initial=context)
     # save the data from the form and
     # redirect to detail_view
     if form.is_valid():
@@ -114,15 +120,20 @@ def update_type(request, type=None):
  
     # fetch the object related to passed id
     obj = get_object_or_404(Type, type = type)
- 
-    # pass the object as instance in form
-    form = typeForm(request.POST or None, instance = obj)
- 
+    if request.method == 'POST':
+        # pass the object as instance in form
+        form = typeForm(request.POST or None, instance = obj)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/clarkclothes/typedetails/")
+    else:
+        context = {"type": obj.type}
+        form = typeForm(initial=context)
     # save the data from the form and
     # redirect to detail_view
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("/clarkclothes/typedetails/")
  
     # add form dictionary to context
     context["form"] = form
@@ -136,15 +147,22 @@ def update_size(request, size=None):
  
     # fetch the object related to passed id
     obj = get_object_or_404(Size, size = size)
- 
+    if request.method == 'POST':
+        # pass the object as instance in form
+        form = sizeForm(request.POST or None, instance = obj)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/clarkclothes/sizedetails/")
+    else:
+        context = {"size": obj.size}
+        form = sizeForm(initial=context)
     # pass the object as instance in form
-    form = sizeForm(request.POST or None, instance = obj)
  
     # save the data from the form and
     # redirect to detail_view
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("/clarkclothes/sizedetails/")
  
     # add form dictionary to context
     context["form"] = form
@@ -158,15 +176,21 @@ def update_style(request, style_name = None):
  
     # fetch the object related to passed id
     obj = get_object_or_404(Style, style_name = style_name)
- 
-    # pass the object as instance in form
-    form = styleForm(request.POST or None, instance = obj)
- 
+    if request.method == 'POST':
+        # pass the object as instance in form
+        form = styleForm(request.POST or None, instance = obj)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/clarkclothes/styledetails/")
+    else:
+        context = {"style_name": obj.style_name, "description": obj.description}
+        form = styleForm(initial=context)
+  
     # save the data from the form and
     # redirect to detail_view
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("/clarkclothes/styledetails/")
  
     # add form dictionary to context
     context["form"] = form
@@ -180,15 +204,21 @@ def update_brand(request, brand_name=None):
  
     # fetch the object related to passed id
     obj = get_object_or_404(Brand, brand_name = brand_name)
- 
-    # pass the object as instance in form
-    form = brandForm(request.POST or None, instance = obj)
- 
+    if request.method == 'POST':
+        # pass the object as instance in form
+        form = brandForm(request.POST or None, instance = obj)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/clarkclothes/branddetails/")
+    else:
+        context = {"brand_name": obj.brand_name}
+        form = brandForm(initial=context)
+  
     # save the data from the form and
     # redirect to detail_view
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("/clarkclothes/branddetails/")
  
     # add form dictionary to context
     context["form"] = form
@@ -209,7 +239,7 @@ def delete_type(request, type):
         obj.delete()
         # after deleting redirect to
         # home page
-        return HttpResponseRedirect("/clarkclothes")
+        return HttpResponseRedirect("/clarkclothes/typedetails/")
  
     return render(request, "delete_type.html", context)
 
@@ -227,7 +257,7 @@ def delete_size(request, size):
         obj.delete()
         # after deleting redirect to
         # home page
-        return HttpResponseRedirect("/clarkclothes")
+        return HttpResponseRedirect("/clarkclothes/sizedetails")
  
     return render(request, "delete_size.html", context)
 
@@ -245,7 +275,7 @@ def delete_style(request, style_name):
         obj.delete()
         # after deleting redirect to
         # home page
-        return HttpResponseRedirect("/clarkclothes")
+        return HttpResponseRedirect("/clarkclothes/styledetails/")
  
     return render(request, "delete_style.html", context)
 
@@ -263,7 +293,7 @@ def delete_brand(request, brand_name):
         obj.delete()
         # after deleting redirect to
         # home page
-        return HttpResponseRedirect("/clarkclothes")
+        return HttpResponseRedirect("/clarkclothes/branddetails")
  
     return render(request, "delete_brand.html", context)
 
