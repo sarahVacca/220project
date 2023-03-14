@@ -38,6 +38,9 @@
     margin-left: 43%;
     position: absolute;
   }
+  .name{
+    display: inline;
+  }
 
 
 
@@ -54,8 +57,11 @@
   <span class="login">
       {% block content2 %}
       {% if user.is_authenticated %}
-      <div style="color: pink;"> Hi {{ user.username }} -
-      <a class="darkfontlink" href="{% url 'logout' %}">Log Out</a>
+      <div style="color: pink;"> 
+        <div class="name">
+          Hi {{ user.username }} -
+        </div>
+        <a class="darkfontlink" href="{% url 'logout' %}">Log Out</a>
       </div>
       {% else %}
       <a class="darkfontlink" href= "{% url 'login' %}">Log In </a>
