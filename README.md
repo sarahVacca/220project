@@ -65,7 +65,10 @@ To interact with this database, follow these steps.
 2. Type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB"" and press enter
 This will open up psql for use. In psql you can view the database tables, delete the database, dump the data inside the database into a file, populate a database based on a previous dump file, and more
 
-
+Testing notes:
+1. To test using the unit tests in tests.py go to a terminal and navigate to the django folder
+2. Then type: "docker compose exec django python manage.py test" and press enter.
+This should run the tests
 
 
 

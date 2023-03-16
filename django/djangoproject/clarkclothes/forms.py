@@ -15,6 +15,13 @@ class itemForm(forms.ModelForm):
             "style",
             "status",
         ]
+    def priceCheck(self):
+        price = self.cleaned_data['price']
+        if not price:
+            return price
+        if price <= 0.99:
+            self.add_error("price", "Should be at least $1")
+        return price
 
 class typeForm(forms.ModelForm):
     class Meta:
