@@ -76,6 +76,8 @@ To test the automated login feature, follow these steps:
 2. Install node.js
 Use this website for help: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm
 3. Type "npm install" and press enter
+4. Start server in a terminal
+5. Open a second terminal and type "npm run test"
 
 
 
