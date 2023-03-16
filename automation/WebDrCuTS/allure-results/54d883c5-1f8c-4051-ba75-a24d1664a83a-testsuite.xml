@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1678921296196' stop='1678921303782'>
+    <name>Login on Clark Clothes Website</name>
+    <title>Login on Clark Clothes Website</title>
+    <test-cases>
+        <test-case start='1678921296216' status='passed' stop='1678921303780'>
+            <name>Login on Clark Clothes Website</name>
+            <title>Login on Clark Clothes Website</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-5'/>
+                <label name='feature' value='Login on Clark Clothes Website'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-111.0.5563.65'/>
+            </parameters>
+            <steps>
+                <step start='1678921296221' status='passed' stop='1678921300140'>
+                    <name>Given I go to clark clothes website</name>
+                    <title>Given I go to clark clothes website</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1678921300141' status='passed' stop='1678921303710'>
+                    <name>Then I click log in</name>
+                    <title>Then I click log in</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1678921303710' status='canceled' stop='1678921303777'>
+                    <name>Then I login</name>
+                    <title>Then I login</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1678921303777' status='canceled' stop='1678921303777'>
+                    <name>Then I verify hi user text is visible</name>
+                    <title>Then I verify hi user text is visible</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

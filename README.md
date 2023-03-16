@@ -70,6 +70,13 @@ Testing notes:
 2. Then type: "docker compose exec django python manage.py test" and press enter.
 This should run the tests
 
+Automation notes:
+To test the automated login feature, follow these steps:
+1. Install npm by navigating to the automation folder in the terminal and typing "npm install -g npm"
+2. Install node.js
+Use this website for help: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm
+3. Type "npm install" and press enter
+
 
 
 
