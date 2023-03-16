@@ -78,6 +78,7 @@ Use this website for help: https://docs.npmjs.com/downloading-and-installing-nod
 3. Type "npm install" and press enter
 4. Start server in a terminal
 5. Open a second terminal and type "npm run test"
+Note: Do not push the node modules folder to git!
 
 
 
