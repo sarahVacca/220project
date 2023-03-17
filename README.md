@@ -72,10 +72,10 @@ This should run the tests
 
 Automation notes:
 To test the automated login feature, follow these steps:
-1. Install npm by navigating to the automation folder in the terminal and typing "npm install -g npm"
-2. Install node.js
+1. Install npm by navigating to the WebDrCuTS folder in the terminal and typing "npm install -g npm"
+2. Install node.js and a java jdk
 Use this website for help: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm
-3. Type "npm install" and press enter
+3. Open a terminal and navigate to WebDrCuTs folder and type "npm install" and press enter
 4. Start server in a terminal
 5. Open a second terminal and type "npm run test"
 
