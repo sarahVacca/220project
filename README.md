@@ -53,37 +53,22 @@ Use this website for help: https://docs.npmjs.com/downloading-and-installing-nod
 3. Open a terminal and navigate to WebDrCuTs folder and type "npm install" and press enter
 4. Start server in a terminal
 5. Open a second terminal and type "npm run test"
-
-
-
-# Below are the ORIGINAL README CONTENTS from CSCI220
-
-
-
-
-
-
-
-
-
-
+## Below are the ORIGINAL README CONTENTS from CSCI220
 
 
 220project
-/////////////////////////////////////////////////////////////////////////
 Project for CSCI 220: Database Management and Systems Design
-/////////////////////////////////////////////////////////////////////////
 
 ORIGINAL README CONTENTS
 A starter project for Clark's Databases course (CSCI 220). This project includes a web server and database.
 
 Follow these steps to get started:
 
-## Step 0: Clone This Repository
+### Step 0: Clone This Repository
 
 Unless otherwise specified, all commands mentioned below should be run within the root directory of this repository.
 
-## Step 1: Install Docker
+### Step 1: Install Docker
 
 This project includes several components: 
 
@@ -93,7 +78,7 @@ This project includes several components:
 
 It could be time-consuming to install and configure all of these on your computer, but thankfully there is a better way: Docker! [Install Docker](https://docs.docker.com/get-docker/), and it will be easy to run all of these components.
 
-## Step 2: Secure Configuration
+### Step 2: Secure Configuration
 
 It is a terrible idea to run software with default passwords. To configure the password for the database and other settings, you will need to write them in a `.env` file. Follow these steps:
 
@@ -107,7 +92,7 @@ It is a terrible idea to run software with default passwords. To configure the p
 python3 -c "import string,random; uni=string.ascii_letters+string.digits; print(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45,50))]))"
 ```
 
-## Step 3: Start the Docker Services
+### Step 3: Start the Docker Services
 
 Run:
 ```
@@ -118,18 +103,18 @@ The first time you run it, this command will take a few minutes to complete. Thi
 
 When you are done running the application, you can stop it by typing `Control-C`.
 
-## Step 4: Run Migrations
+### Step 4: Run Migrations
 
 Follow the instructions below to run the database migrations. This will ensure the database has the schema for the applications.
 
-## Step 5: Load the Applications
+### Step 5: Load the Applications
 
 Load <http://localhost:8080> and you should be redirected to the "Django administration" login interface.
 
 Load <http://localhost:8080/minifacebook> to view the latest statuses of users of the minifacebook application. See instructions below for using the Django admin interface, which you can use to create users and status updates. 
 
 
-## Hints
+### Hints
 
 ### Creating Admin Accounts
 
