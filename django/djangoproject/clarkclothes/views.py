@@ -257,7 +257,7 @@ def delete_size(request, size):
         obj.delete()
         # after deleting redirect to
         # home page
-        return HttpResponseRedirect("/clarkclothes/sizedetails")
+        return HttpResponseRedirect("/clarkclothes/sizedetails/")
  
     return render(request, "delete_size.html", context)
 
@@ -293,7 +293,7 @@ def delete_brand(request, brand_name):
         obj.delete()
         # after deleting redirect to
         # home page
-        return HttpResponseRedirect("/clarkclothes/branddetails")
+        return HttpResponseRedirect("/clarkclothes/branddetails/")
  
     return render(request, "delete_brand.html", context)
 

@@ -11,6 +11,17 @@ Hi, and welcome to Clark Clothes! A website where Clark students can buy and sel
 __pycache__
 .env
 You have finished setting up the application!
+Note: in production, the .env file should not be sent to github as that is a security vulnerability
+
+## Populate the sql database with the database dump file
+1. Connect to psql inside the terminal 
+2. Create a database by typing "CREATE DATABASE" + database name
+3. Then use the file "db_dump.march18.sql" and dump that into your database
+This will allow you to login to the clark clothes website. 
+
+## Logging in
+1. Username: svacca@clarku.edu
+2. Password: Compute090
 
 ## To run the application, follow these steps:
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
