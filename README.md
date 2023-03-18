@@ -1,6 +1,6 @@
-#Hi, and welcome to Clark Clothes! A website where Clark students can buy and sell used clothes on clarks campus! 
+# Hi, and welcome to Clark Clothes! A website where Clark students can buy and sell used clothes on clarks campus! 
 
-##To set up the application, follow these steps:
+## To set up the application, follow these steps:
 1. Clone this repo
 2. This project uses python, docker, django, and postgres sql, make sure to install all of these if you don't already have them
 3. Go to the .env file within the 220project folder
@@ -11,7 +11,7 @@ __pycache__
 .env
 You have finished setting up the application!
 
-##To run the application, follow these steps:
+## To run the application, follow these steps:
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
 2. Type "docker compose up" in the terminal (you may have to open up the docker desktop app for this to work). This will start the docker containers based on the compose file that is in the repo
 3. Once the terminal displays something like this text, you are ready to go.
@@ -24,7 +24,7 @@ You have finished setting up the application!
 4. Navigate to localhost on port 8080 to view the webpage
 Note: to end your session, type "Control + C" in the terminal and it will stop the containers. You will not be able to see the webpage when the containers are stopped.
 
-##After starting docker up for the first time, you should run database migrations
+## After starting docker up for the first time, you should run database migrations
 1. Start the server by typing "docker compose up" when navigated to the django folder inside the terminal window
 2. Once that has started, open a second terminal window (leave the first one open and the server running) and navigate to the django folder
 3. Type "docker compose exec django python manage.py makemigrations" and press enter
@@ -33,19 +33,19 @@ This updates the database to the most recent schema (defined in the models.py fi
 Note: you must run migrations any time you make any database changes!
 
 
-##Database notes:
+## Database notes:
 This project is built using a postgres sql database. 
 To interact with this database, follow these steps.
 1. Start the server and then in a new terminal type "docker compose exec postgres bash" and press enter.
 2. Type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB"" and press enter
 This will open up psql for use. In psql you can view the database tables, delete the database, dump the data inside the database into a file, populate a database based on a previous dump file, and more
 
-##Testing notes:
+## Testing notes:
 1. To test using the unit tests in tests.py go to a terminal and navigate to the django folder
 2. Then type: "docker compose exec django python manage.py test" and press enter.
 This should run the tests
 
-##Automation notes:
+## Automation notes:
 To test the automated login feature, follow these steps:
 1. Install npm by navigating to the WebDrCuTS folder in the terminal and typing "npm install -g npm"
 2. Install node.js and a java jdk
