@@ -56,9 +56,20 @@ Use this website for help: https://docs.npmjs.com/downloading-and-installing-nod
 
 
 
+# Below are the ORIGINAL README CONTENTS from CSCI220
 
 
-# 220project
+
+
+
+
+
+
+
+
+
+
+220project
 /////////////////////////////////////////////////////////////////////////
 Project for CSCI 220: Database Management and Systems Design
 /////////////////////////////////////////////////////////////////////////
