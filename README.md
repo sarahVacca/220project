@@ -1,4 +1,5 @@
-# Hi, and welcome to Clark Clothes! A website where Clark students can buy and sell used clothes on clarks campus! 
+# Clark Clothes
+## Hi, and welcome to Clark Clothes! A website where Clark students can buy and sell used clothes on clarks campus! 
 
 ## To set up the application, follow these steps:
 1. Clone this repo
