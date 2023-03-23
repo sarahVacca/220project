@@ -10,8 +10,10 @@ Hi, and welcome to Clark Clothes! A website where Clark students can buy and sel
 ## Terminal information:
 Most of the commands should be executed inside the terminal at this location:
 220project\django
+```
 For example, if you save this repo on your C Drive in a folder called ClarkClothes, you should navigate to:
 "C:\ClarkClothes\220project\django" when you are running most commands
+```
 
 ## To run the application, follow these steps:
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
@@ -26,7 +28,10 @@ For example, if you save this repo on your C Drive in a folder called ClarkCloth
 220project-django-1    | spawned uWSGI worker 4 (pid: 27, cores: 1)
 ```
 4. Navigate to localhost on port 8080 to view the webpage
-Note: to end your session, type "Control + C" in the terminal and it will stop the containers. You will not be able to see the webpage when the containers are stopped.
+```
+Note: to end your session, type "Control + C" in the terminal and it will stop the containers. 
+You will not be able to see the webpage when the containers are stopped.
+```
 
 ## Populate the sql database with the database dump file:
 1. Connect to psql inside the terminal:
@@ -43,9 +48,12 @@ Note: to end your session, type "Control + C" in the terminal and it will stop t
 2. Once that has started, open a second terminal window (leave the first one open and the server running) and navigate to the django folder
 3. Type "docker compose exec django python manage.py makemigrations" and press enter
 4. Type "docker compose exec django python manage.py migrate" and press enter
+```
 This updates the database to the most recent schema (defined in the models.py file)
+```
+```
 Note: you must run migrations any time you make any database changes!
-
+```
 ## Logging in:
 You must create a user under django admin in order to enter the website. To do that, follow these steps:
 1. Run the server
@@ -54,19 +62,19 @@ You must create a user under django admin in order to enter the website. To do t
 4. Enter your desired username
 5. Enter your email address
 6. Enter your password, enter it again.
-When you enter the website, you can now login using these credentials
+> When you enter the website, you can now login using these credentials
 
 ## Database notes:
 This project is built using a postgres sql database. 
 To interact with this database, follow these steps.
 1. Start the server and then in a new terminal type "docker compose exec postgres bash" and press enter.
 2. Type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB"" and press enter
-This will open up psql for use. In psql you can view the database tables, delete the database, dump the data inside the database into a file, populate a database based on a previous dump file, and more
+> This will open up psql for use. In psql you can view the database tables, delete the database, dump the data inside the database into a file, populate a database based on a previous dump file, and more
 
 ## Testing notes:
 1. To test using the unit tests in tests.py go to a terminal and navigate to the django folder
 2. Then type: "docker compose exec django python manage.py test" and press enter.
-This should run the tests
+> This should run the tests
 
 ## Automation notes:
 To test the automated login feature, follow these steps:
@@ -76,19 +84,19 @@ To test the automated login feature, follow these steps:
 3. Open a terminal and navigate to WebDrCuTs folder and type "npm install" and press enter
 4. Start server in a terminal
 5. Open a second terminal and type "npm run test"
-Note: Do not push the node modules folder to git!
+> Note: Do not push the node modules folder to git!
 
 ## SQL notes:
 To get into psql in the terminal, follow these steps:
 1. Start your server
 2. Open a new terminal and navigate to django folder
 3. Type: "docker compose exec postgres bash"
-This gets you into psql. In here you can run commands like making a database dump
+> This gets you into psql. In here you can run commands like making a database dump
 
 To access your database or run other psql commands, follow these steps:
 1. Follow the above steps to get into psql
 2. Inside that same terminal, type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB""
-Now you should see a prompt like: django_data-#
+> Now you should see a prompt like: django_data-#
 Inside here you can run psql commands.
 ```
 Examples:
@@ -104,4 +112,4 @@ To dump your psql database into a file use these steps:
 2. Open terminal and navigate to django folder
 3. Type "docker compose exec postgres bash"
 4. Type "pg_dump --username="$POSTGRES_USER" --dbname="$POSTGRES_DB" --file=/postgres_files/db_dump.DATE.sql" but replace db_dump.DATE.sql with the name of your file
-Your file should now be populated with your database information
+> Your file should now be populated with your database information
