@@ -536,30 +536,30 @@ COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 
 COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
-1	Can add availablity	1	add_availablity
-2	Can change availablity	1	change_availablity
-3	Can delete availablity	1	delete_availablity
-4	Can view availablity	1	view_availablity
-5	Can add brand	2	add_brand
-6	Can change brand	2	change_brand
-7	Can delete brand	2	delete_brand
-8	Can view brand	2	view_brand
-9	Can add size	3	add_size
-10	Can change size	3	change_size
-11	Can delete size	3	delete_size
-12	Can view size	3	view_size
-13	Can add style	4	add_style
-14	Can change style	4	change_style
-15	Can delete style	4	delete_style
-16	Can view style	4	view_style
-17	Can add type	5	add_type
-18	Can change type	5	change_type
-19	Can delete type	5	delete_type
-20	Can view type	5	view_type
-21	Can add user	6	add_user
-22	Can change user	6	change_user
-23	Can delete user	6	delete_user
-24	Can view user	6	view_user
+1	Can add type	1	add_type
+2	Can change type	1	change_type
+3	Can delete type	1	delete_type
+4	Can view type	1	view_type
+5	Can add size	2	add_size
+6	Can change size	2	change_size
+7	Can delete size	2	delete_size
+8	Can view size	2	view_size
+9	Can add style	3	add_style
+10	Can change style	3	change_style
+11	Can delete style	3	delete_style
+12	Can view style	3	view_style
+13	Can add brand	4	add_brand
+14	Can change brand	4	change_brand
+15	Can delete brand	4	delete_brand
+16	Can view brand	4	view_brand
+17	Can add user	5	add_user
+18	Can change user	5	change_user
+19	Can delete user	5	delete_user
+20	Can view user	5	view_user
+21	Can add availablity	6	add_availablity
+22	Can change availablity	6	change_availablity
+23	Can delete availablity	6	delete_availablity
+24	Can view availablity	6	view_availablity
 25	Can add clothing_ item	7	add_clothing_item
 26	Can change clothing_ item	7	change_clothing_item
 27	Can delete clothing_ item	7	delete_clothing_item
@@ -588,6 +588,10 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 50	Can change session	13	change_session
 51	Can delete session	13	delete_session
 52	Can view session	13	view_session
+53	Can add clark user	14	add_clarkuser
+54	Can change clark user	14	change_clarkuser
+55	Can delete clark user	14	delete_clarkuser
+56	Can view clark user	14	view_clarkuser
 \.
 
 
@@ -596,7 +600,6 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$260000$Cm8yg9CB0mPwH4D5WJpXt9$PNEh2SLBY07IP0tHDkN8nvATsKO+bKSqGmA2LaRb+0w=	2021-12-01 02:50:38.570851+00	t	svacca@clarku.edu			svacca@clarku.edu	t	t	2021-12-01 02:35:11.726113+00
 \.
 
 
@@ -636,6 +639,7 @@ COPY public.clarkclothes_brand (id, brand_name) FROM stdin;
 00cdabed-9d83-41e8-acf7-364314f6d19c	Target
 b0045d64-0463-40f6-a551-0c2957818bc0	Forever 21
 e659b7f8-7abf-4c64-8519-a8b266a7ee57	Dicks Sporting Goods
+6ae0ac97-2100-46cf-8d03-5d1357bccb47	CustomzByZach
 \.
 
 
@@ -644,8 +648,6 @@ e659b7f8-7abf-4c64-8519-a8b266a7ee57	Dicks Sporting Goods
 --
 
 COPY public.clarkclothes_clothing_item (id, name, image, price, brand_id, size_id, status_id, style_id, type_id, user_email_id) FROM stdin;
-1754b84f-9e81-45e2-ae6a-9f4db845d8f6	Blue Crop Top	null	5.00	82d73f00-f2c6-4612-a4fd-0d624fea1157	5945aec5-d680-459d-9c83-aa5c0a24d3a0	Available	351423a4-d80a-451b-8f49-0d70efbf5e30	0e458440-51a4-4a32-a616-5bc848066a4d	svacca@clarku.edu
-011ccfd3-8438-4521-aeb0-a41aef734eca	Khakis	null	20.00	00cdabed-9d83-41e8-acf7-364314f6d19c	6a739ea6-9570-4d79-8e4c-e883f8da428f	Available	50925236-1286-44af-9ef2-ab9aa874015f	d0efd5d2-57fc-469a-8d91-995beba428ca	jmagee@clarku.edu
 \.
 
 
@@ -655,11 +657,11 @@ COPY public.clarkclothes_clothing_item (id, name, image, price, brand_id, size_i
 
 COPY public.clarkclothes_size (id, size) FROM stdin;
 5945aec5-d680-459d-9c83-aa5c0a24d3a0	S
-4491d273-f951-46c8-9eb2-47fefc6be11e	XS
 6a739ea6-9570-4d79-8e4c-e883f8da428f	XL
-9bf6a95e-dbfc-47b4-a9c3-a0764f0e6de6	XXL
-e2cf4492-5e78-4f7f-b24e-e5e7009a067a	XXXXL
+e6975d15-9fae-45c1-a2d6-1e76ad22b346	L
 1d548e92-d58f-4f37-b4b8-3149c6a7201c	M
+d5381354-5357-4351-ac0b-a745c11d5d9e	XS
+09c81f4a-d98a-427e-927c-0e2a645abf73	One Size Fits All
 \.
 
 
@@ -669,9 +671,9 @@ e2cf4492-5e78-4f7f-b24e-e5e7009a067a	XXXXL
 
 COPY public.clarkclothes_style (id, style_name, description) FROM stdin;
 50925236-1286-44af-9ef2-ab9aa874015f	Professional	Generally conservative clothing to portray yourself in a professional manner.
-05631275-88a6-4e75-ac81-645478804789	Casual	Relaxed, occasional, spontaneous and suited for everyday use.
 e74bd7b8-6b97-495c-858b-e263ee426df6	Formal	Applicable for the most formal occasions, such as weddings, christenings, confirmations, funerals, Easter and Christmas traditions, in addition to certain state dinners, audiences, balls, and horse racing events
 351423a4-d80a-451b-8f49-0d70efbf5e30	Workout	Casual, comfortable clothing suitable for sport or exercise.
+f3c025a2-4ffe-4d65-9e06-c31c2a5988b7	Casual	Every day clothing that is comfortable to wear.
 \.
 
 
@@ -685,6 +687,9 @@ COPY public.clarkclothes_type (id, type) FROM stdin;
 74d6a02b-f4f9-4199-81a9-c81a66662aaf	Sweater
 f1a6c1f7-e2a6-4b8a-8df0-723680505ffc	Tank Top
 d0efd5d2-57fc-469a-8d91-995beba428ca	Pants
+3b6a9e83-7bc1-4e38-b4ca-b3fdfbe86ee2	Scarves
+30943a97-ee06-4962-9669-9adfe00cd3ec	Caps
+9bcccca0-6e4d-48ff-a388-4ee9561ecd1d	Dress
 \.
 
 
@@ -693,9 +698,6 @@ d0efd5d2-57fc-469a-8d91-995beba428ca	Pants
 --
 
 COPY public.clarkclothes_user (name, clark_email, phone_number) FROM stdin;
-Sarah Vacca	svacca@clarku.edu	7745516909
-Peter Story	pestory@clarku.edu	1241231234
-John Magee	jmagee@clarku.edu	223132123
 \.
 
 
@@ -704,27 +706,6 @@ John Magee	jmagee@clarku.edu	223132123
 --
 
 COPY public.django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
-1	2021-12-01 02:35:33.582567+00	Available	Available	1	[{"added": {}}]	1	1
-2	2021-12-01 02:35:38.56242+00	Pending	Pending	1	[{"added": {}}]	1	1
-3	2021-12-01 02:35:40.447373+00	Sold	Sold	1	[{"added": {}}]	1	1
-4	2021-12-01 02:35:47.084141+00	00cdabed-9d83-41e8-acf7-364314f6d19c	Target	1	[{"added": {}}]	2	1
-5	2021-12-01 02:35:55.559058+00	82d73f00-f2c6-4612-a4fd-0d624fea1157	H & M	1	[{"added": {}}]	2	1
-6	2021-12-01 02:36:07.814277+00	5945aec5-d680-459d-9c83-aa5c0a24d3a0	S	1	[{"added": {}}]	3	1
-7	2021-12-01 02:36:09.703421+00	e2cf4492-5e78-4f7f-b24e-e5e7009a067a	M	1	[{"added": {}}]	3	1
-8	2021-12-01 02:36:11.219347+00	2eb7fd6b-2292-4ef3-934d-4a7501bc6722	L	1	[{"added": {}}]	3	1
-9	2021-12-01 02:36:12.646467+00	4491d273-f951-46c8-9eb2-47fefc6be11e	XS	1	[{"added": {}}]	3	1
-10	2021-12-01 02:36:15.253684+00	6a739ea6-9570-4d79-8e4c-e883f8da428f	XL	1	[{"added": {}}]	3	1
-11	2021-12-01 02:36:17.894074+00	9bf6a95e-dbfc-47b4-a9c3-a0764f0e6de6	XXL	1	[{"added": {}}]	3	1
-12	2021-12-01 02:36:48.766707+00	05631275-88a6-4e75-ac81-645478804789	Casual	1	[{"added": {}}]	4	1
-13	2021-12-01 02:37:17.101301+00	50925236-1286-44af-9ef2-ab9aa874015f	Professional	1	[{"added": {}}]	4	1
-14	2021-12-01 02:37:41.86781+00	de4a5b88-a247-42db-9f3e-f09ed4e5f7b1	Workout	1	[{"added": {}}]	4	1
-15	2021-12-01 02:37:49.143946+00	0e458440-51a4-4a32-a616-5bc848066a4d	Shirt	1	[{"added": {}}]	5	1
-16	2021-12-01 02:37:54.365235+00	d0efd5d2-57fc-469a-8d91-995beba428ca	Pants	1	[{"added": {}}]	5	1
-17	2021-12-01 02:38:02.410381+00	41d7392f-930c-4658-97c0-b10c76e9aa81	Socks	1	[{"added": {}}]	5	1
-18	2021-12-01 02:38:04.716464+00	8406b178-a439-490c-8ce8-93fced4fc87d	Hat	1	[{"added": {}}]	5	1
-19	2021-12-01 02:38:29.525903+00	svacca@clarku.edu	svacca@clarku.edu	1	[{"added": {}}]	6	1
-20	2021-12-01 02:38:48.895384+00	pestory@clarku.edu	pestory@clarku.edu	1	[{"added": {}}]	6	1
-21	2021-12-01 02:39:07.93608+00	jmagee@clarku.edu	jmagee@clarku.edu	1	[{"added": {}}]	6	1
 \.
 
 
@@ -733,12 +714,12 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 --
 
 COPY public.django_content_type (id, app_label, model) FROM stdin;
-1	clarkclothes	availablity
-2	clarkclothes	brand
-3	clarkclothes	size
-4	clarkclothes	style
-5	clarkclothes	type
-6	clarkclothes	user
+1	clarkclothes	type
+2	clarkclothes	size
+3	clarkclothes	style
+4	clarkclothes	brand
+5	clarkclothes	user
+6	clarkclothes	availablity
 7	clarkclothes	clothing_item
 8	admin	logentry
 9	auth	permission
@@ -746,6 +727,7 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 11	auth	user
 12	contenttypes	contenttype
 13	sessions	session
+14	clarkclothes	clarkuser
 \.
 
 
@@ -754,25 +736,24 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
-1	contenttypes	0001_initial	2021-12-01 02:31:00.604387+00
-2	auth	0001_initial	2021-12-01 02:31:00.856223+00
-3	admin	0001_initial	2021-12-01 02:31:00.961108+00
-4	admin	0002_logentry_remove_auto_add	2021-12-01 02:31:00.999155+00
-5	admin	0003_logentry_add_action_flag_choices	2021-12-01 02:31:01.035302+00
-6	contenttypes	0002_remove_content_type_name	2021-12-01 02:31:01.087943+00
-7	auth	0002_alter_permission_name_max_length	2021-12-01 02:31:01.116901+00
-8	auth	0003_alter_user_email_max_length	2021-12-01 02:31:01.143771+00
-9	auth	0004_alter_user_username_opts	2021-12-01 02:31:01.177705+00
-10	auth	0005_alter_user_last_login_null	2021-12-01 02:31:01.205579+00
-11	auth	0006_require_contenttypes_0002	2021-12-01 02:31:01.214596+00
-12	auth	0007_alter_validators_add_error_messages	2021-12-01 02:31:01.243956+00
-13	auth	0008_alter_user_username_max_length	2021-12-01 02:31:01.28279+00
-14	auth	0009_alter_user_last_name_max_length	2021-12-01 02:31:01.305203+00
-15	auth	0010_alter_group_name_max_length	2021-12-01 02:31:01.329972+00
-16	auth	0011_update_proxy_permissions	2021-12-01 02:31:01.351811+00
-17	auth	0012_alter_user_first_name_max_length	2021-12-01 02:31:01.372774+00
-18	clarkclothes	0001_initial	2021-12-01 02:31:01.620627+00
-19	sessions	0001_initial	2021-12-01 02:31:01.688441+00
+1	contenttypes	0001_initial	2023-01-29 21:40:31.811122+00
+2	auth	0001_initial	2023-01-29 21:40:32.400937+00
+3	admin	0001_initial	2023-01-29 21:40:32.492979+00
+4	admin	0002_logentry_remove_auto_add	2023-01-29 21:40:32.519015+00
+5	admin	0003_logentry_add_action_flag_choices	2023-01-29 21:40:32.541374+00
+6	contenttypes	0002_remove_content_type_name	2023-01-29 21:40:32.595296+00
+7	auth	0002_alter_permission_name_max_length	2023-01-29 21:40:32.614437+00
+8	auth	0003_alter_user_email_max_length	2023-01-29 21:40:32.637841+00
+9	auth	0004_alter_user_username_opts	2023-01-29 21:40:32.658726+00
+10	auth	0005_alter_user_last_login_null	2023-01-29 21:40:32.680906+00
+11	auth	0006_require_contenttypes_0002	2023-01-29 21:40:32.688279+00
+12	auth	0007_alter_validators_add_error_messages	2023-01-29 21:40:32.710426+00
+13	auth	0008_alter_user_username_max_length	2023-01-29 21:40:32.761321+00
+14	auth	0009_alter_user_last_name_max_length	2023-01-29 21:40:32.79695+00
+15	auth	0010_alter_group_name_max_length	2023-01-29 21:40:32.832067+00
+16	auth	0011_update_proxy_permissions	2023-01-29 21:40:32.87346+00
+17	auth	0012_alter_user_first_name_max_length	2023-01-29 21:40:32.899427+00
+18	sessions	0001_initial	2023-01-29 21:40:32.951742+00
 \.
 
 
@@ -782,6 +763,12 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 w9ornnsuopz0erw4r67rkf2eklzn5bcf	.eJxVjDsOwjAQRO_iGll2_COU9JzB2vVucADZUpxUiLvjSCmgG715M28RYVtz3BovcSZxEVqcfhlCenLZC3pAuVeZalmXGeWuyKNt8laJX9fD_TvI0HJfW5cUGz8pJBfAONaOtO4ZhzRpZG-M9eGszIg2AQamzmF0yiuTyA7i8wXjfjfr:1msFhe:2ajYG2h7R-fnSj3B6Qqe5wPvKuoHqwPrb-piqKDpG6E	2021-12-15 02:50:38.577727+00
+v76tu7sbeqwntkmsub8jdxwhil4a24x2	.eJxVjEEOwiAQRe_C2hAGCFCX7j0DGWZAqgaS0q6Md9cmXej2v_f-S0Tc1hq3kZc4szgLEKffLSE9ctsB37HduqTe1mVOclfkQYe8ds7Py-H-HVQc9VsXZTWzAe3QglNMDiczOUhoSoEECiihC-h9UZk4e69DIEjFG1CWi3h_AOHOOBk:1pVmrg:fSqJuFTKs6OmAoH2C6RHTIb7l1mzA_iOXUkmzwEFf5A	2023-03-11 05:12:56.509005+00
+o7kc8kkyw1if9g1ch4gli63hlgryaorf	.eJxVjEEOwiAQRe_C2hAGCFCX7j0DGWZAqgaS0q6Md9cmXej2v_f-S0Tc1hq3kZc4szgLEKffLSE9ctsB37HduqTe1mVOclfkQYe8ds7Py-H-HVQc9VsXZTWzAe3QglNMDiczOUhoSoEECiihC-h9UZk4e69DIEjFG1CWi3h_AOHOOBk:1pcaDw:O9oUN-IShGuharEonln3rrTm26tZSWOapEwH2ScBT3Y	2023-03-29 23:08:00.346428+00
+0k1xxtluxabbb7pzvwyys3pk7ccpp7f1	.eJxVjEEOwiAQRe_C2hAGCFCX7j0DGWZAqgaS0q6Md9cmXej2v_f-S0Tc1hq3kZc4szgLEKffLSE9ctsB37HduqTe1mVOclfkQYe8ds7Py-H-HVQc9VsXZTWzAe3QglNMDiczOUhoSoEECiihC-h9UZk4e69DIEjFG1CWi3h_AOHOOBk:1pcvVm:zfq8W8VxcnD024413dbvNdxcPrtgeywyuDkQv-rz5Lk	2023-03-30 21:51:50.309408+00
+97q8f0r5v6il9was1lx499izym8jk6tl	.eJxVjEEOwiAQRe_C2hAGCFCX7j0DGWZAqgaS0q6Md9cmXej2v_f-S0Tc1hq3kZc4szgLEKffLSE9ctsB37HduqTe1mVOclfkQYe8ds7Py-H-HVQc9VsXZTWzAe3QglNMDiczOUhoSoEECiihC-h9UZk4e69DIEjFG1CWi3h_AOHOOBk:1pcvv4:I31Fqrs2FP6qSrN25sciznKODyIp2JvaWGEFnDpooAI	2023-03-30 22:17:58.065998+00
+gw06yuwvd260t0x7qjyjlz5s3bzmm3lg	.eJxVjEEOwiAQRe_C2hAGCFCX7j0DGWZAqgaS0q6Md9cmXej2v_f-S0Tc1hq3kZc4szgLEKffLSE9ctsB37HduqTe1mVOclfkQYe8ds7Py-H-HVQc9VsXZTWzAe3QglNMDiczOUhoSoEECiihC-h9UZk4e69DIEjFG1CWi3h_AOHOOBk:1pcw78:yLzjSHo45G2AH8Oc685K4Ct5QrlhfT_7nNa57fcBoEw	2023-03-30 22:30:26.762441+00
+pmo83na11jbmil9148icel3qs8t0wisq	.eJxVjMEOwiAQRP-FsyFA2VI8evcbCOyuUjWQlPZk_HdL0oNeJpN5M_MWIW5rDlvjJcwkzsKK02-WIj65dECPWO5VYi3rMifZK_KgTV4r8etydP8Ocmx5XwMrh8ZMBqPTA4AaGDwqRD_46NA7Ul1uuzc6gaYJgViPxlpLI7H4fAHVMjfW:1pfSGv:GMV3asUx_EVIX6zCMW9Rbj1h1Q2kOrf2-nH3G3bvUvA	2023-04-06 21:14:57.161988+00
 \.
 
 
@@ -803,7 +790,7 @@ SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django
 --
 
-SELECT pg_catalog.setval('public.auth_permission_id_seq', 52, true);
+SELECT pg_catalog.setval('public.auth_permission_id_seq', 56, true);
 
 
 --
@@ -817,7 +804,7 @@ SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django
 --
 
-SELECT pg_catalog.setval('public.auth_user_id_seq', 1, true);
+SELECT pg_catalog.setval('public.auth_user_id_seq', 4, true);
 
 
 --
@@ -831,14 +818,14 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 21, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 33, true);
 
 
 --
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django
 --
 
-SELECT pg_catalog.setval('public.django_content_type_id_seq', 13, true);
+SELECT pg_catalog.setval('public.django_content_type_id_seq', 14, true);
 
 
 --

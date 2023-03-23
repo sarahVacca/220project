@@ -7,12 +7,11 @@ Hi, and welcome to Clark Clothes! A website where Clark students can buy and sel
 3. Copy the information that is inside the dot_env_example file and put that into the .env file
 4. Make the postgres password something random, and the django secret key something long and random
 
-## Populate the sql database with the database dump file
-1. Connect to psql inside the terminal 
-2. Create a database by typing "CREATE DATABASE" + database name
-3. Then use the file "db_dump.march18.sql" and dump that into your database
-This will allow you to login to the clark clothes website. 
-
+## Terminal information
+Most of the commands should be executed inside the terminal at this location:
+220project\django
+For example, if you save this repo on your C Drive in a folder called ClarkClothes, you should navigate to:
+"C:\ClarkClothes\220project\django" when you are running most commands
 ## To run the application, follow these steps:
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
 2. Type "docker compose up" in the terminal (you may have to open up the docker desktop app for this to work). This will start the docker containers based on the compose file that is in the repo
@@ -25,6 +24,16 @@ This will allow you to login to the clark clothes website.
 220project-django-1    | spawned uWSGI worker 4 (pid: 27, cores: 1)
 4. Navigate to localhost on port 8080 to view the webpage
 Note: to end your session, type "Control + C" in the terminal and it will stop the containers. You will not be able to see the webpage when the containers are stopped.
+
+## Populate the sql database with the database dump file
+1. Connect to psql inside the terminal:
+   a. Run the server in one terminal
+   b. In another terminal navigate to django folder and type "docker compose exec postgres bash"
+   c. Type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB""
+2. Create a database called clark clothes by typing "CREATE DATABASE clarkclothes;"
+3. Then open a new terminal and navigate to the django folder
+4. Type docker compose exec postgres bash
+5. Use the file "db_dump.march232023.sql" and dump that into your database by typing this command "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB" --file=/postgres_files/db_dump.march232023.sql"
 
 ## After starting docker up for the first time, you should run database migrations
 1. Start the server by typing "docker compose up" when navigated to the django folder inside the terminal window
@@ -67,5 +76,27 @@ Use this website for help: https://docs.npmjs.com/downloading-and-installing-nod
 Note: Do not push the node modules folder to git!
 
 ## SQL notes:
-1. To get into psql in the terminal, navigate to django folder and type: "docker compose exec postgres bash"
-2. Dump database using this command "docker exec -i 220project-postgres-1 /bin/bash -c "PGPASSWORD=$POSTGRES_PASSWORD psql --username $POSTGRES_USER clarkclothes" < C:\ClarkClothes\220project\postgres_files\db_dump.DATE.sql"
+To get into psql in the terminal, follow these steps:
+1. Start your server
+2. Open a new terminal and navigate to django folder
+3. Type: "docker compose exec postgres bash"
+This gets you into psql. In here you can run commands like making a database dump
+
+To access your database...
+1. Follow the above steps to get into psql
+2. Inside that same terminal, type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB""
+Now you should see a prompt like: django_data-#
+Inside here you can run psql commands.
+Examples:
+\l to list all databases
+\dt to list all relations
+\c "database name" to connect to a database
+CREATE DATABASE "database name"; to create a database
+DROP DATABASE "database name"; to delete database
+
+To dump your psql database into a file use these steps:
+1. Create a new file inside the postgres_files folder called "db_dump.DATE.sql" but replace the date with today's date (the date of your db dump)
+2. Open terminal and navigate to django folder
+3. Type "docker compose exec postgres bash"
+4. Type "pg_dump --username="$POSTGRES_USER" --dbname="$POSTGRES_DB" --file=/postgres_files/db_dump.DATE.sql" but replace db_dump.DATE.sql with the name of your file
+Your file should now be populated with your database information
