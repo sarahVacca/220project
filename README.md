@@ -1,17 +1,18 @@
 # Clark Clothes
 Hi, and welcome to Clark Clothes! A website where Clark students can buy and sell used clothes on clarks campus! 
 
-## To set up the application, follow these steps:
+## To set up the application, follow these steps
 1. Clone this repo
 2. Create a .env file within the 220project folder
 3. Copy the information that is inside the dot_env_example file and put that into the .env file
 4. Make the postgres password something random, and the django secret key something long and random
 
-## Terminal information
+## Terminal information:
 Most of the commands should be executed inside the terminal at this location:
 220project\django
 For example, if you save this repo on your C Drive in a folder called ClarkClothes, you should navigate to:
 "C:\ClarkClothes\220project\django" when you are running most commands
+
 ## To run the application, follow these steps:
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
 2. Type "docker compose up" in the terminal (you may have to open up the docker desktop app for this to work). This will start the docker containers based on the compose file that is in the repo
@@ -25,7 +26,7 @@ For example, if you save this repo on your C Drive in a folder called ClarkCloth
 4. Navigate to localhost on port 8080 to view the webpage
 Note: to end your session, type "Control + C" in the terminal and it will stop the containers. You will not be able to see the webpage when the containers are stopped.
 
-## Populate the sql database with the database dump file
+## Populate the sql database with the database dump file:
 1. Connect to psql inside the terminal:
    a. Run the server in one terminal
    b. In another terminal navigate to django folder and type "docker compose exec postgres bash"
@@ -35,7 +36,7 @@ Note: to end your session, type "Control + C" in the terminal and it will stop t
 4. Type docker compose exec postgres bash
 5. Use the file "db_dump.march232023.sql" and dump that into your database by typing this command "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB" --file=/postgres_files/db_dump.march232023.sql"
 
-## After starting docker up for the first time, you should run database migrations
+## After starting docker up for the first time, you should run database migrations:
 1. Start the server by typing "docker compose up" when navigated to the django folder inside the terminal window
 2. Once that has started, open a second terminal window (leave the first one open and the server running) and navigate to the django folder
 3. Type "docker compose exec django python manage.py makemigrations" and press enter
@@ -43,7 +44,7 @@ Note: to end your session, type "Control + C" in the terminal and it will stop t
 This updates the database to the most recent schema (defined in the models.py file)
 Note: you must run migrations any time you make any database changes!
 
-## Logging in
+## Logging in:
 You must create a user under django admin in order to enter the website. To do that, follow these steps:
 1. Run the server
 2. Open a new terminal and navigate to django folder
