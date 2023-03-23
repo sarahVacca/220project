@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__
 .env
+./automation/WebDrCuTS/node_modules
+
+
