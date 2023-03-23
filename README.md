@@ -4,17 +4,14 @@ Hi, and welcome to Clark Clothes! A website where Clark students can buy and sel
 ## To set up the application, follow these steps:
 1. Clone this repo
 2. Create a .env file within the 220project folder
-3. Make the postgres password something random, and the django secret key something long and random
+3. Copy the information that is inside the dot_env_example file and put that into the .env file
+4. Make the postgres password something random, and the django secret key something long and random
 
 ## Populate the sql database with the database dump file
 1. Connect to psql inside the terminal 
 2. Create a database by typing "CREATE DATABASE" + database name
 3. Then use the file "db_dump.march18.sql" and dump that into your database
 This will allow you to login to the clark clothes website. 
-
-## Logging in
-1. Username: svacca@clarku.edu
-2. Password: Compute090
 
 ## To run the application, follow these steps:
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
@@ -37,6 +34,15 @@ Note: to end your session, type "Control + C" in the terminal and it will stop t
 This updates the database to the most recent schema (defined in the models.py file)
 Note: you must run migrations any time you make any database changes!
 
+## Logging in
+You must create a user under django admin in order to enter the website. To do that, follow these steps:
+1. Run the server
+2. Open a new terminal and navigate to django folder
+3. Type "docker compose exec django python manage.py create superuser"
+4. Enter your desired username
+5. Enter your email address
+6. Enter your password, enter it again.
+When you enter the website, you can now login using these credentials
 
 ## Database notes:
 This project is built using a postgres sql database. 
