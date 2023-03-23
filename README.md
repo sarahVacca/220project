@@ -17,22 +17,22 @@ For example, if you save this repo on your C Drive in a folder called ClarkCloth
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
 2. Type "docker compose up" in the terminal (you may have to open up the docker desktop app for this to work). This will start the docker containers based on the compose file that is in the repo
 3. Once the terminal displays something like this text, you are ready to go.
-'''
+```
 220project-django-1    | *** WARNING: you are running uWSGI as root !!! (use the --uid flag) ***
 220project-django-1    | *** uWSGI is running in multiple interpreter mode ***
 220project-django-1    | spawned uWSGI worker 1 (pid: 1, cores: 1)
 220project-django-1    | spawned uWSGI worker 2 (pid: 25, cores: 1)
 220project-django-1    | spawned uWSGI worker 3 (pid: 26, cores: 1)
 220project-django-1    | spawned uWSGI worker 4 (pid: 27, cores: 1)
-'''
+```
 4. Navigate to localhost on port 8080 to view the webpage
 Note: to end your session, type "Control + C" in the terminal and it will stop the containers. You will not be able to see the webpage when the containers are stopped.
 
 ## Populate the sql database with the database dump file:
 1. Connect to psql inside the terminal:
-- Run the server in one terminal
-- In another terminal navigate to django folder and type "docker compose exec postgres bash"
-- Type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB""
+    - Run the server in one terminal
+    - In another terminal navigate to django folder and type "docker compose exec postgres bash"
+    - Type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB""
 2. Create a database called clark clothes by typing "CREATE DATABASE clarkclothes;"
 3. Then open a new terminal and navigate to the django folder
 4. Type docker compose exec postgres bash
@@ -90,14 +90,14 @@ To access your database or run other psql commands, follow these steps:
 2. Inside that same terminal, type "psql --username="$POSTGRES_USER" --dbname="$POSTGRES_DB""
 Now you should see a prompt like: django_data-#
 Inside here you can run psql commands.
-'''
+```
 Examples:
 \l to list all databases
 \dt to list all relations
 \c "database name" to connect to a database
 CREATE DATABASE "database name"; to create a database
 DROP DATABASE "database name"; to delete database
-'''
+```
 
 To dump your psql database into a file use these steps:
 1. Create a new file inside the postgres_files folder called "db_dump.DATE.sql" but replace the date with today's date (the date of your db dump)
