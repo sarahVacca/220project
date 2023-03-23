@@ -3,8 +3,8 @@ Hi, and welcome to Clark Clothes! A website where Clark students can buy and sel
 
 ## To set up the application, follow these steps:
 1. Clone this repo
-2. Go to the .env file within the 220project folder
-3. Change the postgres password to something random, and change the django secret key to something long and random
+2. Create a .env file within the 220project folder
+3. Make the postgres password something random, and the django secret key something long and random
 
 ## Populate the sql database with the database dump file
 1. Connect to psql inside the terminal 
