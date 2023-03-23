@@ -10,10 +10,8 @@ Hi, and welcome to Clark Clothes! A website where Clark students can buy and sel
 ## Terminal information:
 Most of the commands should be executed inside the terminal at this location:
 220project\django
-```
-For example, if you save this repo on your C Drive in a folder called ClarkClothes, you should navigate to:
-"C:\ClarkClothes\220project\django" when you are running most commands
-```
+> For example, if you save this repo on your C Drive in a folder called ClarkClothes, you should navigate to: "C:\ClarkClothes\220project\django" when you are running most commands
+
 
 ## To run the application, follow these steps:
 1. Open up a new terminal window (if using VScode) and navigate to the "django" folder
@@ -28,10 +26,9 @@ For example, if you save this repo on your C Drive in a folder called ClarkCloth
 220project-django-1    | spawned uWSGI worker 4 (pid: 27, cores: 1)
 ```
 4. Navigate to localhost on port 8080 to view the webpage
-```
-Note: to end your session, type "Control + C" in the terminal and it will stop the containers. 
-You will not be able to see the webpage when the containers are stopped.
-```
+> Note: to end your session, type "Control + C" in the terminal and it will stop the containers. 
+> You will not be able to see the webpage when the containers are stopped.
+
 
 ## Populate the sql database with the database dump file:
 1. Connect to psql inside the terminal:
@@ -48,12 +45,9 @@ You will not be able to see the webpage when the containers are stopped.
 2. Once that has started, open a second terminal window (leave the first one open and the server running) and navigate to the django folder
 3. Type "docker compose exec django python manage.py makemigrations" and press enter
 4. Type "docker compose exec django python manage.py migrate" and press enter
-```
-This updates the database to the most recent schema (defined in the models.py file)
-```
-```
-Note: you must run migrations any time you make any database changes!
-```
+> This updates the database to the most recent schema (defined in the models.py file)
+> Note: you must run migrations any time you make any database changes!
+
 ## Logging in:
 You must create a user under django admin in order to enter the website. To do that, follow these steps:
 1. Run the server
