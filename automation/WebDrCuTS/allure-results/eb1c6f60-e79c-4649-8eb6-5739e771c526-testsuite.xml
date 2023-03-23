@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1679005062571' stop='1679005081410'>
+    <name>Login on Clark Clothes Website</name>
+    <title>Login on Clark Clothes Website</title>
+    <test-cases>
+        <test-case start='1679005062594' status='passed' stop='1679005081409'>
+            <name>Login on Clark Clothes Website</name>
+            <title>Login on Clark Clothes Website</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+                <label name='feature' value='Login on Clark Clothes Website'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-111.0.5563.65'/>
+            </parameters>
+            <steps>
+                <step start='1679005062598' status='passed' stop='1679005067388'>
+                    <name>Given I go to clark clothes website</name>
+                    <title>Given I go to clark clothes website</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1679005067388' status='passed' stop='1679005071007'>
+                    <name>Then I click log in</name>
+                    <title>Then I click log in</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1679005071007' status='passed' stop='1679005078288'>
+                    <name>Then User Login</name>
+                    <title>Then User Login</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1679005078288' status='passed' stop='1679005081406'>
+                    <name>Then I verify hi user text is visible</name>
+                    <title>Then I verify hi user text is visible</title>
+                    <attachments>
+                        <attachment title='Console Logs' source='e8bc7408-89c9-4fa8-96d3-bd14403d1485-attachment.html' type='text/html' size='242'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
