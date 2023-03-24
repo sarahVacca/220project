@@ -52,11 +52,19 @@ Most of the commands should be executed inside the terminal at this location:
 You must create a user under django admin in order to enter the website. To do that, follow these steps:
 1. Run the server
 2. Open a new terminal and navigate to django folder
-3. Type "docker compose exec django python manage.py create superuser"
+3. Type "docker compose exec django python manage.py createsuperuser"
 4. Enter your desired username
 5. Enter your email address
 6. Enter your password, enter it again.
 > When you enter the website, you can now login using these credentials
+
+## Django admin
+You should utilize the django admin userface when using this website and you have to create a user using the django admin
+1. Start the server
+2. Open a web browser and navigate to http://localhost:8080/admin/
+3. Under the clarkclothes section, add a user
+4. Have the username match the username you used when creating your django admin account
+> This will allow you to add clothing items on the website
 
 ## Database notes:
 This project is built using a postgres sql database. 
