@@ -115,3 +115,10 @@ To dump your psql database into a file use these steps:
 3. Type "docker compose exec postgres bash"
 4. Type "pg_dump --username="$POSTGRES_USER" --dbname="$POSTGRES_DB" --file=/postgres_files/db_dump.DATE.sql" but replace db_dump.DATE.sql with the name of your file
 > Your file should now be populated with your database information
+
+## A note on images
+Currently images are stored in django\djangoproject\media\pictures
+This is set up in django\djangoproject\djangoproject\urls.py
+The images only show up if settings.DEBUG = true
+This means that images will only appear when DJANGO_DEBUG = true, inside the .env file
+
